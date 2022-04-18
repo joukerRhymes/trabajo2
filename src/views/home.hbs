@@ -1,0 +1,35 @@
+{{> navbar}}
+<div class="container mt-3">
+  <header class="my-5">
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+      <h1>Bienvenido a Notas de Duck</h1>
+    </div>
+
+    <div class="col-md-auto">
+      <p>
+        Ingresa una nota con una imagen que puedas recordar facilmente y de esta manera poder hacer lo que necesitabas sin falta ni preocupacion.
+      </p>
+    </div>
+</div>
+
+    
+    
+    <a href="/about">Sobre mi</a>
+  </header>
+  <hr>
+  <h3 class="mt-5 mb-3">Últimas Notas</h3>
+
+  {{#each notes}}
+    <div class="card mb-3">
+      <div class="card-body">
+        <img src="{{image}}" width="250px" height="250px">
+        <h5 class="card-title">{{this.title}}</h5>
+        <p class="card-text">{{this.content}}</p>
+        <a href="/notes/{{this.id}}" class="btn btn-primary btn-sm">Leer más</a>
+      </div>
+    </div>
+  {{/each}}
+</div>
